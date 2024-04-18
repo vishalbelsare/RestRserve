@@ -35,15 +35,15 @@ auth_backend$authenticate(rq, rs) # TRUE
 
 }
 \references{
-\href{https://tools.ietf.org/html/rfc7617}{RFC7617}
+\href{https://datatracker.ietf.org/doc/html/rfc7617}{RFC7617}
 \href{https://en.wikipedia.org/wiki/Basic_access_authentication}{Wikipedia}
 }
 \seealso{
 \link{AuthMiddleware} \link{Request} \link{Response}
 
 Other AuthBackend: 
-\code{\link{AuthBackendBearer}},
 \code{\link{AuthBackend}},
+\code{\link{AuthBackendBearer}},
 \code{\link{AuthMiddleware}}
 }
 \concept{AuthBackend}
@@ -53,20 +53,14 @@ Other AuthBackend:
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AuthBackendBasic$new()}}
-\item \href{#method-authenticate}{\code{AuthBackendBasic$authenticate()}}
-\item \href{#method-clone}{\code{AuthBackendBasic$clone()}}
+\item \href{#method-AuthBackendBasic-new}{\code{AuthBackendBasic$new()}}
+\item \href{#method-AuthBackendBasic-authenticate}{\code{AuthBackendBasic$authenticate()}}
+\item \href{#method-AuthBackendBasic-clone}{\code{AuthBackendBasic$clone()}}
 }
-}
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-}
-\out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AuthBackendBasic-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AuthBackendBasic-new}{}}}
 \subsection{Method \code{new()}}{
 Creates AuthBackendBasic class object.
 \subsection{Usage}{
@@ -84,8 +78,8 @@ a requested \code{user} or not.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-authenticate"></a>}}
-\if{latex}{\out{\hypertarget{method-authenticate}{}}}
+\if{html}{\out{<a id="method-AuthBackendBasic-authenticate"></a>}}
+\if{latex}{\out{\hypertarget{method-AuthBackendBasic-authenticate}{}}}
 \subsection{Method \code{authenticate()}}{
 Provide authentication for the given request.
 \subsection{Usage}{
@@ -106,8 +100,8 @@ Boolean - whether access is allowed for a requested \code{user} or not.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AuthBackendBasic-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AuthBackendBasic-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

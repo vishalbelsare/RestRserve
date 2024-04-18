@@ -22,6 +22,8 @@ BackendRserve = R6::R6Class(
     initialize = function(..., jit_level = 0L, precompile = FALSE) {
       private$jit_level = checkmate::assert_int(jit_level, lower = 0L, upper = 3L)
       private$precompile = checkmate::assert_logical(precompile)
+      headers_to_split = getOption("RestRserve.headers.split", character())
+      private$headers_to_split = checkmate::assert_character(headers_to_split)
       invisible(self)
     },
     #' @description
@@ -229,6 +231,7 @@ BackendRserve = R6::R6Class(
     jit_level = NULL,
     precompile = NULL,
     request = NULL,
+    headers_to_split = NULL,
     parse_form_urlencoded = function(body, request) {
       if (length(body) > 0L) {
         # Named character vector. Body parameters key-value pairs.
@@ -281,7 +284,7 @@ BackendRserve = R6::R6Class(
         headers = rawToChar(headers)
       }
       if (is_string(headers)) {
-        headers = cpp_parse_headers(headers)
+        headers = cpp_parse_headers(headers, private$headers_to_split)
       }
       request$headers = headers
       return(request)
@@ -327,7 +330,7 @@ BackendRserve = R6::R6Class(
 #' @title Creates ApplicationProcess object
 #'
 #' @description
-#' Creates ApplicationProcess to hold PID of the runnung applicaiton.
+#' Creates ApplicationProcess to hold PID of the running application.
 #'
 ApplicationProcess = R6::R6Class(
   classname = "ApplicationProcess",
@@ -342,12 +345,12 @@ ApplicationProcess = R6::R6Class(
     },
     #' @description
     #' Send signal to process.
-    #' @param signal Singal code.
+    #' @param signal Signal code.
     kill = function(signal = 15L) {
-      # kill service
-      tools::pskill(self$pid, signal)
-      # kill childs
-      system(sprintf("pkill -%s -P %s", signal, self$pid), wait = FALSE)
+      # get childs
+      child_pids = suppressWarnings(system(sprintf("pgrep -P %s", self$pid), intern = TRUE))
+      # kill all
+      tools::pskill(c(self$pid, child_pids), signal)
     }
   )
 )

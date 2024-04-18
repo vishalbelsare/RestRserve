@@ -4,14 +4,14 @@
 [![R build status](https://github.com/rexyai/RestRserve/workflows/R-CMD-check/badge.svg)](https://github.com/rexyai/RestRserve/actions)
 <a href="https://rexy.ai"><img src="https://s3-eu-west-1.amazonaws.com/rexy.ai/images/favicon.ico" height="32" width="32"></a>
 [![CRAN status](https://www.r-pkg.org/badges/version/RestRserve)](https://cran.r-project.org/package=RestRserve)
-[![codecov](https://codecov.io/gh/rexyai/RestRserve/branch/master/graph/badge.svg)](https://codecov.io/gh/rexyai/RestRserve/branch/master)
+[![codecov](https://codecov.io/gh/rexyai/RestRserve/branch/master/graph/badge.svg)](https://app.codecov.io/gh/rexyai/RestRserve/branch/master)
 [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![Lifecycle: stable](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![gitter](https://img.shields.io/gitter/room/RestRserve/community.svg?color=61D6AD&style=popout)](https://gitter.im/RestRserve/community)
+[![gitter](https://img.shields.io/gitter/room/RestRserve/community.svg?color=61D6AD&style=popout)](https://app.gitter.im/#/room/#RestRserve_community:gitter.im)
 ![tinyverse](https://tinyverse.netlify.com/badge/RestRserve)
 <!-- badges: end -->
 
-[RestRserve](https://github.com/rexyai/RestRserve) is an R web API framework for building **high-performance** AND **robust** microservices and app backends. With [Rserve](https://github.com/s-u/Rserve) backend on UNIX-like systems it is **parallel by design**. It will handle incoming requests in parallel - each request in a separate fork (all the credits should go to [Simon Urbanek](https://github.com/s-u)).
+[RestRserve](https://github.com/rexyai/RestRserve) is an R web API framework for building **high-performance** AND **robust** microservices and app backends. On UNIX-like systems and [Rserve](https://github.com/s-u/Rserve) backend RestRserve handles requests in parallel: each request in a separate fork - credits go to [Simon Urbanek](https://github.com/s-u).
 
 ## Quick start
 
@@ -51,22 +51,22 @@ curl -H "Content-Type: application/json" -d '{"x":10}' localhost:8080/addone
 
 Using convenient `.req`, `.res` names for handler arguments allows to leverage autocomplete.
 
-<img src="https://cdn.rexy.ai/assets/req-res.gif" width="100%" style="vertical-align:bottom">
+<img src="https://cdn.rexy.ai/assets/req-res.gif" width="640" style="vertical-align:bottom">
 
 ## Learn RestRserve
 
 - follow [quick start guide on http://restrserve.org/](https://restrserve.org/articles/RestRserve.html) for more details.
-- check out "Articles" section on https://restrserve.org/
-- browse [examples on https://github.com/rexyai/RestRserve](https://github.com/rexyai/RestRserve/tree/master/inst/examples)
+- see "Articles" section on https://restrserve.org/
+- check out [examples on https://github.com/rexyai/RestRserve](https://github.com/rexyai/RestRserve/tree/master/inst/examples)
 
 ## Features
 
-- Stable, easy to install, small number of dependencies
+- Stable, easy to install, few dependencies
+- Concise and intuitive syntax
+- Well documented, comes with **many examples** - see [inst/examples](https://github.com/rexyai/RestRserve/tree/master/inst/examples)
 - Fully featured http server with the **support for URL encoded and multipart forms**
 - Build **safe and secure applications** - RestRserve supports *https*, provides building blocks for basic/token authentication
-- Concise and intuitive syntax
 - **Raise meaningful http errors** and allows to interrupt request handling from any place of the user code
-- Well documented, comes with **many examples** - see [inst/examples](https://github.com/rexyai/RestRserve/tree/master/inst/examples)
 - Saves you from boilerplate code:
   - automatically decodes request body from the common formats
   - automatically encodes response body to the common formats
@@ -74,7 +74,7 @@ Using convenient `.req`, `.res` names for handler arguments allows to leverage a
   - helps to expose OpenAPI and Swagger/Redoc/Rapidoc UI
 - It is [fast](https://restrserve.org/articles/benchmarks/Benchmarks.html)!
 
-![](vignettes/img/bench-rps.png)
+![](https://github.com/rexyai/RestRserve/blob/master/vignettes/img/bench-rps.png?raw=true)
 
 ## Installation
 
@@ -85,16 +85,16 @@ install.packages("RestRserve", repos = "https://cloud.r-project.org")
 
 ### Docker
 
-Debian and Alpine based images are available from docker-hub: [https://hub.docker.com/r/rexyai/restrserve/](https://hub.docker.com/r/rexyai/restrserve/)
+Debian and Alpine based images are available on docker-hub  -[https://hub.docker.com/r/rexyai/restrserve/](https://hub.docker.com/r/rexyai/restrserve/)
 
 ```sh
 docker pull rexyai/restrserve
 ```
 
-Or install specific version:
+You can also install specific version (and we encourage to do so):
 
 ```sh
-docker pull rexyai/restrserve:0.4.0-minimal
+docker pull rexyai/restrserve:1.2.0-alpine
 ```
 
 ## Contributing

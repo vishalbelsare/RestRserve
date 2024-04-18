@@ -10,9 +10,9 @@ Adds various authorizations to \link{Application}.
 \link{Middleware} \link{Application}
 
 Other AuthBackend: 
+\code{\link{AuthBackend}},
 \code{\link{AuthBackendBasic}},
-\code{\link{AuthBackendBearer}},
-\code{\link{AuthBackend}}
+\code{\link{AuthBackendBearer}}
 }
 \concept{AuthBackend}
 \section{Super class}{
@@ -21,19 +21,13 @@ Other AuthBackend:
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AuthMiddleware$new()}}
-\item \href{#method-clone}{\code{AuthMiddleware$clone()}}
+\item \href{#method-AuthMiddleware-new}{\code{AuthMiddleware$new()}}
+\item \href{#method-AuthMiddleware-clone}{\code{AuthMiddleware$clone()}}
 }
-}
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-}
-\out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AuthMiddleware-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AuthMiddleware-new}{}}}
 \subsection{Method \code{new()}}{
 Creeates AuthMiddleware object.
 \subsection{Usage}{
@@ -60,8 +54,8 @@ Creeates AuthMiddleware object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AuthMiddleware-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AuthMiddleware-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

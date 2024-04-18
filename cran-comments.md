@@ -1,12 +1,13 @@
 ## New submission
 
-- adds Etag Middleware
-- fixes content-encoding bug
+- minor bugfixes
+- removed SystemRequirements: C++11 from DESCRIPTION
+- fixed 301 urls
 
 ### Test environments
 
-- local mac os, R 4.0.3
-- Ubuntu 20.04 (gh-actions), R 4.0.3
+- local mac os, R 4.3.1
+- Ubuntu 20.04 (gh-actions), R 4.3.3
 - win-builder (devel)
 
 ### R CMD check results
